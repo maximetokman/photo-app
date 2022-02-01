@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Photo App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <link rel="stylesheet" href="/static/home.css">
+    <link rel="stylesheet" href="/static/api-docs.css">
+</head>
+<body>
+
+    {% with user=user %}
+        {% include 'includes/navbar.html'  %}
+    {% endwith %}
+    <main>
+        <h2>GET Requests</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Method/Route</th>
+                    <th>Description and Examples</th>
+                    <th>Parameters</th>
+                    <th>Response Type</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>GET /api/posts</td>
+                    <td>
+                        All posts in the current users' feed. 
+                        <ul>
+                            <li><a href="/api/posts">/api/posts</a></li>
+                            <li><a href="/api/posts?limit=5">/api/posts?limit=5</a></li>
+                            <li><a href="/api/posts?username={{ friend.username }}">/api/posts?username={{ friend.username }}</a></li>
+                            <li><a href="/api/posts?username={{ friend.username }}&limit=2">/api/posts?username={{ friend.username }}&limit=2</a></li>
+                            <li><a href="/api/posts?username={{ stranger.username }}">/api/posts?username={{ stranger.username }}&limit=2</a></li>
+                        </ul>
+                    </td>
+                    <td>
+                        <ul>
+                            <li><code class="highlighter-rouge">username (string, optional)</code><br>Only shows posts that were created by the requested user.</li>
+                            <li><code class="highlighter-rouge">limit (int, optional)</code><br>Limits the number of posts returned (defaults to 10, maximum is 50)</li>
+                        </ul>
+                    </td>
+                    <td>List of Post Objects</td>
+                </tr>
+                <tr>
+                    <td>GET /api/posts/&lt;int:id&gt;</td>
+                    <td>
+                        The post associated with the id
+                        <ul>
+                            <li><a href="/api/posts/8">/api/posts/8</a></li>
+                            <li><a href="/api/posts/6">/api/posts/6</a></li>
+                        </ul>
+                    </td>
+                    <td></td>
+                    <td>Post Object</td>
+                </tr>
+                <tr>
+                    <td>GET /api/followers</td>
+                    <td>
+                        Users who are following the current user.
+                        <ul>
+                            <li><a href="/api/followers">/api/followers</a></li>
+                        </ul>
+                    </td>
+                    <td></td>
+                    <td>List of User Objects</td>
+                </tr>
+                <tr>
+                    <td>GET /api/following</td>
+                    <td>
+                        Users who the current user is following.
+                        <ul>
+                            <li><a href="/api/following">/api/following</a></li>
+                        </ul>
+                    </td>
+                    <td></td>
+                    <td>List of User Objects</td>
+                </tr>
+                <tr>
+                    <td>GET /api/profile</td>
+                    <td>
+                        The current user's profile.
+                        <ul>
+                            <li><a href="/api/profile">/api/profile</a></li>
+                        </ul>
+                    </td>
+                    <td></td>
+                    <td>User Object</td>
+                </tr>
+            </tbody>
+        </table>
+
+
+
+        <h2>POST, PATCH, and DELETE Requests</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Method/Route</th>
+                    <th>Description and Examples</th>
+                    <th>Parameters</th>
+                    <th>Response Type</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>GET /api/profile</td>
+                    <td>
+                        The current user's profile.
+                        <ul>
+                            <li><a href="/api/profile">/api/profile</a></li>
+                        </ul>
+                    </td>
+                    <td></td>
+                    <td>User Object</td>
+                </tr>
+            </tbody>
+        </table>
+
+    </main>
+
+</body>
+</html>

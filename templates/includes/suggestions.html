@@ -1,0 +1,20 @@
+<aside>
+    <header>
+        <img src="{{ user.thumb_url }}" class="pic" alt="Profile pic for {{ user.username }}"/>
+        <h2>{{ user.username }}</h2>
+    </header>
+
+    <div class="suggestions">
+        <p class="suggestion-text">Suggestions for you</p>
+        {% for suggestion in suggestions %}
+            <section>
+                <img src="{{ suggestion.thumb_url }}" class="pic" alt="Profile pic for {{ suggestion.username }}" />
+                <div>
+                    <p>{{ suggestion.username }}</p>
+                    <p>suggested for you</p>
+                </div>
+                <div><button class="link">follow</button></div>
+            </section>
+        {% endfor %}
+    </div>
+</aside>

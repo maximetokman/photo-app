@@ -1,0 +1,22 @@
+main {
+    width: 90%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding-left: 5%;
+}
+
+h2 {
+    margin-top: 40px;
+}
+
+main table {
+    width: 100%;
+}
+
+
+main table td, main table th {
+    background: white;
+    padding: 5px;
+    vertical-align: top;
+}
