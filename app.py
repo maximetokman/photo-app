@@ -20,7 +20,7 @@ api = Api(app)
 
 # set logged in user
 with app.app_context():
-    app.current_user = User.query.filter_by(id=12).one()
+    app.current_user = User.query.filter_by(id=10).one()
 
 
 # Initialize routes for all of your API endpoints:
